@@ -16,7 +16,7 @@ import { sharedConfig } from './app.module';
     ],
     providers: [
         { provide: 'ORIGIN_URL', useValue: location.origin },
-        { provide: ErrorHandler, useClass: AppErrorHandler }      
+        { provide: ErrorHandler, useClass: AppErrorHandler }
     ]
 })
 export class AppModule {
