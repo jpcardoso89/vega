@@ -101,7 +101,15 @@ export class VehicleFormComponent implements OnInit {
 
   submit(){
     this.vehicleService.create(this.vehicle)
-      .subscribe(x => console.log(x));
+      .subscribe(()=>{
+        this.toastyService.success({
+          title:'Sucess',
+          msg: 'Vehicle create with sucess!',
+          theme:'bootstrap',
+          showClose:true,
+          timeout:5000
+        });
+      });
                           
   }
 
