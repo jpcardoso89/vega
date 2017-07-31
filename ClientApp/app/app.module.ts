@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
+import { VehicleListComponent } from './components/vehicle-list/vehicle-list.component';
 
 
 export const sharedConfig: NgModule = {
@@ -21,6 +22,7 @@ export const sharedConfig: NgModule = {
         CounterComponent,
         FetchDataComponent,
         VehicleFormComponent,
+        VehicleListComponent,
         HomeComponent
     ],
     imports: [
@@ -31,6 +33,7 @@ export const sharedConfig: NgModule = {
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'vehicles/new', component: VehicleFormComponent },
             { path: 'vehicles/edit/:id', component: VehicleFormComponent },
+            { path: 'vehicles/list', component: VehicleListComponent },
             { path: '**', redirectTo: 'home' }
         ]),
        FormsModule,
