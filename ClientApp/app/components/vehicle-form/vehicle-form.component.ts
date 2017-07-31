@@ -24,7 +24,7 @@ export class VehicleFormComponent implements OnInit {
     id:0,
     makeId:0,
     modelId:0,
-    isRegistered:false,
+    isRegistered:null,
     features: [],
     contact:{
       name:'',
