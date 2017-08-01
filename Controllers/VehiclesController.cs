@@ -87,6 +87,7 @@ namespace vega.Controllers
 
             return Ok(vehicleResource);
         }
+        
         [HttpGet]
         public async Task<IEnumerable<VehicleResource>> GetVehicles(FilterResource filterResource)
         {
