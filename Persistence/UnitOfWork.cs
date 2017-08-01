@@ -10,7 +10,6 @@ namespace vega.Persistence
         public UnitOfWork(VegaDbContext context)
         {
             this.context = context;
-
         }
 
         public async Task CompleteAsync()
