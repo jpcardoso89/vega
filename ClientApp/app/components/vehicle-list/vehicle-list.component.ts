@@ -25,15 +25,20 @@ export class VehicleListComponent implements OnInit {
 
   onFilterChange(){
     let vehiclesFiltered = this.allVehicles;
-      
+
     if(this.filter.makeId)
       vehiclesFiltered = vehiclesFiltered.filter(v => v.make.id == this.filter.makeId);
 
-    if(this.filter.modelId){
+    if(this.filter.modelId)
       vehiclesFiltered = vehiclesFiltered.filter(v => v.model.id == this.filter.modelId);
 
     this.vehicles = vehiclesFiltered;
-    }
+
+  }
+
+  resetFilter(){
+    this.filter = {};
+    this.onFilterChange();
   }
 
 }
