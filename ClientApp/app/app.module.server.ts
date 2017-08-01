@@ -1,3 +1,4 @@
+import { VehicleService } from './services/vehicle.service';
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 import { sharedConfig } from './app.module';
@@ -9,8 +10,6 @@ import { sharedConfig } from './app.module';
         ServerModule,
         ...sharedConfig.imports
     ]
-    
-    
 })
 export class AppModule {
 }

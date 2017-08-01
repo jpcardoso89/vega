@@ -27,19 +27,17 @@ export const sharedConfig: NgModule = {
     ],
     imports: [
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'vehicles', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'counter', component: CounterComponent },
             { path: 'fetch-data', component: FetchDataComponent },
             { path: 'vehicles/new', component: VehicleFormComponent },
             { path: 'vehicles/edit/:id', component: VehicleFormComponent },
-            { path: 'vehicles/list', component: VehicleListComponent },
+            { path: 'vehicles', component: VehicleListComponent },
             { path: '**', redirectTo: 'home' }
         ]),
        FormsModule,
-       ToastyModule.forRoot() 
-    ],
-    providers:[
-       
+       ToastyModule.forRoot()
     ]
+    
 };
