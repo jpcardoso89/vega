@@ -5,9 +5,9 @@
 
 <div class="form-group well">
   <label for="make">Make</label>
-  <select name="make" id="make" class="form-control" [(ngModel)]="filter.makeId" (change)="onFilterChange()">
+  <select name="makeId" id="make" class="form-control" [(ngModel)]="filter.makeId" (change)="onFilterChange()">
     <option value="">Selecione</option>
-    <option *ngFor="let m of makes" value="{{m.Id}}">{{m.name}}</option>
+    <option *ngFor="let m of makes" value="{{m.id}}">{{m.name}}</option>
   </select>
 </div>
 
@@ -22,6 +22,12 @@
     </tr>
   </thead>
   <tbody>
-
+    <tr *ngFor="let v of vehicles">
+      <td>{{v.id}}</td>
+      <td>{{v.make.name}}</td>
+      <td>{{v.model.name}}</td>
+      <td>{{v.contact.name}}</td>
+      <td></td>
+    </tr>
   </tbody>
 </table>
