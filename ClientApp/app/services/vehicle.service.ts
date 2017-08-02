@@ -21,8 +21,8 @@ export class VehicleService {
     return this.http.get(`${this.originUrl}${this.vehiclesEndpoint}/${id}`).map(res => res.json());
   }
   
-  getVehicles(filter){
-    return this.http.get(`${this.originUrl}${this.vehiclesEndpoint}/?${this.toQueryString(filter)}`).map(res => res.json());
+  getVehicles(query){
+    return this.http.get(`${this.originUrl}${this.vehiclesEndpoint}/?${this.toQueryString(query)}`).map(res => res.json());
   }
 
   toQueryString(obj){
