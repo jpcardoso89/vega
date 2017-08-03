@@ -12,18 +12,20 @@ import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
 import { VehicleListComponent } from './components/vehicle-list/vehicle-list.component';
+import { PaginationComponent } from './components/shared/pagination.component';
 
 
 export const sharedConfig: NgModule = {
     bootstrap: [ AppComponent ],
     declarations: [
         AppComponent,
-        NavMenuComponent,
         CounterComponent,
         FetchDataComponent,
+        HomeComponent,
+        NavMenuComponent,
         VehicleFormComponent,
         VehicleListComponent,
-        HomeComponent
+        PaginationComponent
     ],
     imports: [
         RouterModule.forRoot([

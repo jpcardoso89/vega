@@ -15,7 +15,9 @@ export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[];
   allVehicles: Vehicle[];
   makes: KeyValuePair[];
-  query:any = {};
+  query:any = {
+    pageSize:3
+  };
   columns = [
     {title:'Id'},
     {title:'Make', key:'make', isSortable:true},
@@ -26,6 +28,11 @@ export class VehicleListComponent implements OnInit {
 
   ngOnInit() {
     this.vehicleService.getMakes().subscribe(makes => this.makes = makes);
+    this.populateVehicles();
+  }
+
+  onPageChange(page){
+    this.query.page = page;
     this.populateVehicles();
   }
 
