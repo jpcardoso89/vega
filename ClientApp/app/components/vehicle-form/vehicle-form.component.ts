@@ -41,7 +41,8 @@ export class VehicleFormComponent implements OnInit {
     private toastyService: ToastyService) { 
 
       route.params.subscribe(p =>{
-        this.vehicle.id = +p["id"];
+        if(+p["id"])
+          this.vehicle.id = +p["id"];
       });
 
     }
@@ -120,7 +121,7 @@ export class VehicleFormComponent implements OnInit {
             showClose:true,
             timeout:5000
           });
-        });
+        }); 
     }                       
   }
 
