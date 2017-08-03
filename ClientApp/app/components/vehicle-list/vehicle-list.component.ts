@@ -12,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class VehicleListComponent implements OnInit {
+
+  private readonly PAGE_SIZE : number = 3;
   totalItems:number;
   vehicles: Vehicle[];
   allVehicles: Vehicle[];
@@ -38,6 +40,7 @@ export class VehicleListComponent implements OnInit {
   }
 
   onFilterChange(){
+    this.query.page = 1;
     this.populateVehicles();
   }
 
@@ -48,8 +51,11 @@ export class VehicleListComponent implements OnInit {
     });
   }
   resetFilter(){
-    this.query = {};
-    this.onFilterChange();
+    this.query = {
+      page:1,
+      pageSize: this.PAGE_SIZE
+    };
+    this.populateVehicles();
   }
 
   sortBy(columnName){
