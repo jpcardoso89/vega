@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class VehicleListComponent implements OnInit {
+  totalItems:number;
   vehicles: Vehicle[];
   allVehicles: Vehicle[];
   makes: KeyValuePair[];
@@ -41,7 +42,10 @@ export class VehicleListComponent implements OnInit {
   }
 
   private populateVehicles(){
-    this.vehicleService.getVehicles(this.query).subscribe(vehicles => this.vehicles = vehicles);
+    this.vehicleService.getVehicles(this.query).subscribe(result => {
+      this.vehicles = result.items;
+      this.totalItems = result.totalItems;
+    });
   }
   resetFilter(){
     this.query = {};
